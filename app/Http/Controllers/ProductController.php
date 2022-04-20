@@ -81,7 +81,7 @@ class ProductController extends Controller
         try {
             $product = $this->productRepository->findById($id);
             if (!$product) {
-                return response([__('message')=> __('Not found'),''], Response::HTTP_NOT_FOUND);
+                return response([__('message')=> __('Not found')], Response::HTTP_NOT_FOUND);
             }
             $countRelationshipProduct = $product->categories()->count();
             if($countRelationshipProduct) {
